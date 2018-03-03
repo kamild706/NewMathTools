@@ -1,6 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#3F51B5</color>
-    <color name="colorPrimaryDark">#303F9F</color>
-    <color name="colorAccent">#FF4081</color>
+    <color name="colorPrimary">#FF9800</color>
+    <color name="colorPrimaryDark">#F57C00</color>
+    <color name="colorAccent">#0094FF</color>
+    <color name="textColorPrimary">#E5E5E5</color>
+    <color name="textColorSecondary">#D89800</color>
+    <color name="myTextColor">#B0B0B0</color>
+    <color name="windowBackground">#303030</color>
+
+
+    <color name="buttonBackgroundColor">#222</color>
+    <color name="labelTextColorHint">#E5E5E5</color>
+    <color name="labelColorControlNormal">#E5E5E5</color>
+    <color name="labelColorControlActivated">#0094FF</color>
 </resources>

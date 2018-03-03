@@ -1,13 +1,72 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context="pl.t32.newmathtools.CalendarFragment">
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              tools:context="pl.t32.newmathtools.calendar.CalendarFragment"
+              android:orientation="vertical">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <android.support.design.widget.TextInputLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="wrap_content"
+        android:theme="@style/TextLabel">
 
-</FrameLayout>
+        <android.support.design.widget.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:inputType="number"
+            android:hint="@string/day"
+            android:id="@+id/day"
+            android:maxLength="2"/>
+
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/TextLabel">
+
+        <android.support.design.widget.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:hint="@string/month"
+            android:id="@+id/month"
+            android:inputType="number"
+            android:maxLength="2"/>
+
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/TextLabel">
+
+        <android.support.design.widget.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:hint="@string/year"
+            android:id="@+id/year"
+            android:inputType="number"
+            android:maxLength="4"/>
+
+    </android.support.design.widget.TextInputLayout>
+
+    <Switch
+        style="@style/SwitchStyle"
+        android:id="@+id/calendar_switch"
+        android:text="@string/show_steps"/>
+
+    <Button
+        style="@style/ButtonStyle"
+        android:id="@+id/button"
+        android:text="@string/compute"/>
+
+    <ScrollView
+        style="@style/ScrollViewStyle"
+        android:id="@+id/scrollView">
+
+        <TextView
+            style="@style/TextViewStyle"
+            android:id="@+id/textView"/>
+    </ScrollView>
+
+</LinearLayout>

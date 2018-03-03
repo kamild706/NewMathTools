@@ -5,4 +5,33 @@
     <string name="navigation_drawer_close">Close navigation drawer</string>
 
     <string name="action_settings">Settings</string>
+    <string name="calendar">Calendar</string>
+    <string name="arithmetic_progression">Arithmetic Progression</string>
+    <string name="number_base_converter">Number Base Converter</string>
+    <string name="combinatorics">Combinatorics</string>
+    <string name="combinations">Combinations</string>
+    <string name="permutations">Permutations</string>
+    <string name="rising_factorial">Rising Factorial</string>
+    <string name="arithmetic">Arithmetic</string>
+    <string name="divisors_of_number">Divisors of number</string>
+    <string name="factorization">Factorization</string>
+    <string name="multiples_of_number">Multiples of number</string>
+    <string name="greatest_common_divisor">Greatest common divisor</string>
+    <string name="least_common_multiple">Least common multiple</string>
+    <string name="prime_numbers">Prime numbers</string>
+    <string name="linear_congruence">Linear congruence</string>
+    <string name="extended_euclidean_algorithm">Extended Euclidean algorithm</string>
+    <string name="help">Help</string>
+    <string name="about">About</string>
+    <string name="settings">Settings</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="day">Day</string>
+    <string name="month">Month</string>
+    <string name="year">Year</string>
+    <string name="show_steps">Show steps</string>
+    <string name="compute">Compute</string>
+    <string name="date_does_not_exist">Given day does not exist</string>
+    <string name="year_out_of_range">Year must be greater than 1600</string>
 </resources>

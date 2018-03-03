@@ -5,33 +5,87 @@
 
     <group android:checkableBehavior="single">
         <item
-            android:id="@+id/nav_camera"
+            android:id="@+id/nav_calendar"
             android:icon="@drawable/ic_menu_camera"
-            android:title="Import"/>
+            android:title="@string/calendar"/>
         <item
-            android:id="@+id/nav_gallery"
+            android:id="@+id/nav_arithmetic_progression"
             android:icon="@drawable/ic_menu_gallery"
-            android:title="Gallery"/>
+            android:title="@string/arithmetic_progression"/>
         <item
-            android:id="@+id/nav_slideshow"
+            android:id="@+id/nav_number_base_converter"
             android:icon="@drawable/ic_menu_slideshow"
-            android:title="Slideshow"/>
-        <item
-            android:id="@+id/nav_manage"
-            android:icon="@drawable/ic_menu_manage"
-            android:title="Tools"/>
+            android:title="@string/number_base_converter"/>
     </group>
 
-    <item android:title="Communicate">
+    <item android:title="@string/combinatorics">
+        <menu>
+            <group android:checkableBehavior="single">
+                <item
+                    android:id="@+id/nav_combination"
+                    android:icon="@drawable/ic_menu_share"
+                    android:title="@string/combinations"/>
+                <item
+                    android:id="@+id/nav_permutation"
+                    android:icon="@drawable/ic_menu_send"
+                    android:title="@string/permutations"/>
+                <item
+                    android:id="@+id/nav_rising_factorial"
+                    android:icon="@drawable/ic_menu_send"
+                    android:title="@string/rising_factorial"/>
+            </group>
+        </menu>
+    </item>
+
+    <item android:title="@string/arithmetic">
+        <menu>
+            <group android:checkableBehavior="single">
+                <item
+                    android:id="@+id/nav_divisors"
+                    android:icon="@drawable/ic_menu_share"
+                    android:title="@string/divisors_of_number"/>
+                <item
+                    android:id="@+id/nav_factorization"
+                    android:icon="@drawable/ic_menu_send"
+                    android:title="@string/factorization"/>
+                <item
+                    android:id="@+id/nav_multiples"
+                    android:icon="@drawable/ic_menu_send"
+                    android:title="@string/multiples_of_number"/>
+                <item
+                    android:id="@+id/nav_gcd"
+                    android:icon="@drawable/ic_menu_send"
+                    android:title="@string/greatest_common_divisor"/>
+                <item
+                    android:id="@+id/nav_lcm"
+                    android:icon="@drawable/ic_menu_send"
+                    android:title="@string/least_common_multiple"/>
+                <item
+                    android:id="@+id/nav_primes"
+                    android:icon="@drawable/ic_menu_send"
+                    android:title="@string/prime_numbers"/>
+                <item
+                    android:id="@+id/nav_linear_congruence"
+                    android:icon="@drawable/ic_menu_send"
+                    android:title="@string/linear_congruence"/>
+                <item
+                    android:id="@+id/nav_extended_euclidean_algorithm"
+                    android:icon="@drawable/ic_menu_send"
+                    android:title="@string/extended_euclidean_algorithm"/>
+            </group>
+        </menu>
+    </item>
+
+    <item android:title="@string/help">
         <menu>
             <item
-                android:id="@+id/nav_share"
-                android:icon="@drawable/ic_menu_share"
-                android:title="Share"/>
-            <item
-                android:id="@+id/nav_send"
+                android:id="@+id/nav_about"
                 android:icon="@drawable/ic_menu_send"
-                android:title="Send"/>
+                android:title="@string/about"/>
+            <item
+                android:id="@+id/nav_settings"
+                android:icon="@drawable/ic_menu_send"
+                android:title="@string/settings"/>
         </menu>
     </item>
 
