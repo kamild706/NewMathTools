@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/TextLabel">
+
+        <android.support.design.widget.TextInputEditText
+            android:id="@+id/ap_initial_term"
+            android:hint="Initial term of progression"
+            style="@style/InputEditTextStyle"/>
+
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/TextLabel">
+
+        <android.support.design.widget.TextInputEditText
+            android:id="@+id/ap_common_diff"
+            android:hint="Common difference"
+            style="@style/InputEditTextStyle"/>
+
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/TextLabel">
+
+        <android.support.design.widget.TextInputEditText
+            android:id="@+id/ap_terms_number"
+            android:hint="Number of terms"
+            style="@style/InputEditTextStyle"/>
+
+    </android.support.design.widget.TextInputLayout>
+
+    <Switch
+        android:id="@+id/ap_switch"
+        android:text="@string/show_steps"
+        style="@style/SwitchStyle"/>
+
+    <Button
+        android:id="@+id/button"
+        android:text="@string/compute"
+        style="@style/ButtonStyle"/>
+
+    <ScrollView
+        android:id="@+id/scrollView"
+        style="@style/ScrollViewStyle">
+
+        <TextView
+            android:id="@+id/textView"
+            style="@style/TextViewStyle"/>
+    </ScrollView>
+
+
+</LinearLayout>
