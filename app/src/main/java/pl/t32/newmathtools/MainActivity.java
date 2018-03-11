@@ -1,9 +1,9 @@
 package pl.t32.newmathtools;
 
+import android.app.Fragment;
+import android.app.FragmentTransaction;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentTransaction;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
@@ -12,6 +12,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 
+import pl.t32.newmathtools.ap.ArithmeticProgressionFragment;
 import pl.t32.newmathtools.calendar.CalendarFragment;
 
 public class MainActivity extends AppCompatActivity
@@ -33,7 +34,7 @@ public class MainActivity extends AppCompatActivity
         NavigationView navigationView = findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
-        FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+        FragmentTransaction transaction = getFragmentManager().beginTransaction();
         transaction.replace(R.id.fragment_container, new CalendarFragment());
         transaction.commit();
 
@@ -52,58 +53,58 @@ public class MainActivity extends AppCompatActivity
         }
     }
 
-
-    @SuppressWarnings("StatementWithEmptyBody")
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         int id = item.getItemId();
         Fragment fragment = null;
 
-        if (id == R.id.nav_calendar) {
-            fragment = new CalendarFragment();
-        }
-        else if (id == R.id.nav_arithmetic_progression) {
+        switch (id) {
+            case R.id.nav_calendar:
+                fragment = new CalendarFragment();
+                break;
+            case R.id.nav_arithmetic_progression:
+                fragment = new ArithmeticProgressionFragment();
+                break;
+            case R.id.nav_number_base_converter:
 
-        }
-        else if (id == R.id.nav_number_base_converter) {
+                break;
+            case R.id.nav_combination:
 
-        }
-        else if (id == R.id.nav_combination) {
+                break;
+            case R.id.nav_permutation:
 
-        }
-        else if (id == R.id.nav_permutation) {
+                break;
+            case R.id.nav_rising_factorial:
 
-        }
-        else if (id == R.id.nav_rising_factorial) {
+                break;
+            case R.id.nav_divisors:
 
-        }
-        else if (id == R.id.nav_divisors) {
+                break;
+            case R.id.nav_factorization:
 
-        }
-        else if (id == R.id.nav_factorization) {
+                break;
+            case R.id.nav_gcd:
 
-        }
-        else if (id == R.id.nav_gcd) {
+                break;
+            case R.id.nav_lcm:
 
-        }
-        else if (id == R.id.nav_lcm) {
+                break;
+            case R.id.nav_linear_congruence:
 
-        }
-        else if (id == R.id.nav_linear_congruence) {
+                break;
+            case R.id.nav_extended_euclidean_algorithm:
 
-        }
-        else if (id == R.id.nav_extended_euclidean_algorithm) {
+                break;
+            case R.id.nav_about:
 
-        }
-        else if (id == R.id.nav_about) {
+                break;
+            case R.id.nav_settings:
 
-        }
-        else if (id == R.id.nav_settings) {
-
+                break;
         }
 
         if (fragment != null) {
-            FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+            FragmentTransaction transaction = getFragmentManager().beginTransaction();
             transaction.replace(R.id.fragment_container, fragment);
             transaction.commit();
 

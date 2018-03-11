@@ -1,20 +1,14 @@
 package pl.t32.newmathtools;
 
 
+import android.support.annotation.NonNull;
 import android.widget.EditText;
 
 public class MyUtils {
 
-    public static String getText(EditText editText) {
+    @NonNull
+    public static String getValue(EditText editText) {
         return editText.getText().toString();
-    }
-
-    public static int getInt(EditText editText) {
-        try {
-            return Integer.parseInt(getText(editText));
-        } catch (NumberFormatException | NullPointerException e) {
-            throw new NumberFormatException();
-        }
     }
 
     public static boolean isInteger(String s) {
@@ -33,5 +27,10 @@ public class MyUtils {
             return false;
         }
         return true;
+    }
+
+    public static String capitalize(String s) {
+        if (s.length() == 0) return s;
+        return s.substring(0, 1).toUpperCase() + s.substring(1).toLowerCase();
     }
 }

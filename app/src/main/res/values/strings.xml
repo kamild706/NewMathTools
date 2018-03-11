@@ -1,37 +1,38 @@
 <resources>
-    <string name="app_name">NewMathTools</string>
+    <string name="app_name" translatable="false">NewMathTools</string>
 
-    <string name="navigation_drawer_open">Open navigation drawer</string>
-    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="navigation_drawer_open" translatable="false">Open navigation drawer</string>
+    <string name="navigation_drawer_close" translatable="false">Close navigation drawer</string>
 
-    <string name="action_settings">Settings</string>
-    <string name="calendar">Calendar</string>
-    <string name="arithmetic_progression">Arithmetic Progression</string>
-    <string name="number_base_converter">Number Base Converter</string>
-    <string name="combinatorics">Combinatorics</string>
-    <string name="combinations">Combinations</string>
-    <string name="permutations">Permutations</string>
-    <string name="rising_factorial">Rising Factorial</string>
-    <string name="arithmetic">Arithmetic</string>
-    <string name="divisors_of_number">Divisors of number</string>
-    <string name="factorization">Factorization</string>
-    <string name="multiples_of_number">Multiples of number</string>
-    <string name="greatest_common_divisor">Greatest common divisor</string>
-    <string name="least_common_multiple">Least common multiple</string>
-    <string name="prime_numbers">Prime numbers</string>
-    <string name="linear_congruence">Linear congruence</string>
-    <string name="extended_euclidean_algorithm">Extended Euclidean algorithm</string>
-    <string name="help">Help</string>
-    <string name="about">About</string>
-    <string name="settings">Settings</string>
+    <string name="nav_drawer_calendar">Calendar</string>
+    <string name="nav_drawer_arithmetic_progression">Arithmetic Progression</string>
+    <string name="nav_drawer_number_base_converter">Number Base Converter</string>
+    <string name="nav_drawer_combinatorics">Combinatorics</string>
+    <string name="nav_drawer_combinations">Combinations</string>
+    <string name="nav_drawer_permutations">Permutations</string>
+    <string name="nav_drawer_rising_factorial">Rising Factorial</string>
+    <string name="nav_drawer_arithmetic">Arithmetic</string>
+    <string name="nav_drawer_divisors_of_number">Divisors of number</string>
+    <string name="nav_drawer_factorization">Factorization</string>
+    <string name="nav_drawer_multiples_of_number">Multiples of number</string>
+    <string name="nav_drawer_greatest_common_divisor">Greatest common divisor</string>
+    <string name="nav_drawer_least_common_multiple">Least common multiple</string>
+    <string name="nav_drawer_prime_numbers">Prime numbers</string>
+    <string name="nav_drawer_linear_congruence">Linear congruence</string>
+    <string name="nav_drawer_extended_euclidean_algorithm">Extended Euclidean algorithm</string>
+    <string name="nav_drawer_help">Help</string>
+    <string name="nav_drawer_about">About</string>
+    <string name="nav_drawer_settings">Settings</string>
 
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="day">Day</string>
     <string name="month">Month</string>
     <string name="year">Year</string>
     <string name="show_steps">Show steps</string>
     <string name="compute">Compute</string>
-    <string name="date_does_not_exist">Given day does not exist</string>
-    <string name="year_out_of_range">Year must be greater than 1600</string>
+    <string name="error_message_date_does_not_exist">Given day does not exist</string>
+    <string name="error_message_year_out_of_range">Year must be greater than 1600</string>
+    <string name="error_message_inputs_must_contain_numbers">Fill all inputs with numeric values</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

@@ -52,6 +52,12 @@
         <item name="android:textColor">@color/myTextColor</item>
     </style>
 
+    <style name="InputEditTextStyle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">55dp</item>
+        <item name="android:inputType">number</item>
+    </style>
+
     <style name="AppTheme.NoActionBar">
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
