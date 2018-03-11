@@ -65,6 +65,6 @@ public class CalendarFragment extends Fragment implements CalendarContract.View 
 
     @Override
     public void showImproperValuesPassedError() {
-        Snackbar.make(textView, R.string.error_message_inputs_must_contain_numbers, Snackbar.LENGTH_LONG).show();
+        Snackbar.make(textView, R.string.error_message_numbers_only, Snackbar.LENGTH_LONG).show();
     }
 }

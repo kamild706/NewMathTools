@@ -14,6 +14,7 @@ import android.view.MenuItem;
 
 import pl.t32.newmathtools.ap.ArithmeticProgressionFragment;
 import pl.t32.newmathtools.calendar.CalendarFragment;
+import pl.t32.newmathtools.nbc.NumberBaseConverterFragment;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -66,7 +67,7 @@ public class MainActivity extends AppCompatActivity
                 fragment = new ArithmeticProgressionFragment();
                 break;
             case R.id.nav_number_base_converter:
-
+                fragment = new NumberBaseConverterFragment();
                 break;
             case R.id.nav_combination:
 

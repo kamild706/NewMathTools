@@ -58,7 +58,7 @@ public class ArithmeticProgressionFragment extends Fragment
     @Override
     public void showImproperValuesPassedError() {
         Snackbar.make(textView,
-                R.string.error_message_inputs_must_contain_numbers,Snackbar.LENGTH_LONG).show();
+                R.string.error_message_numbers_only,Snackbar.LENGTH_LONG).show();
     }
 
     @Override
