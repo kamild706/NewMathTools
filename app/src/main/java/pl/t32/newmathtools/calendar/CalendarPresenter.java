@@ -1,12 +1,14 @@
 package pl.t32.newmathtools.calendar;
 
+
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-import pl.t32.newmathtools.MyUtils;
 import pl.t32.newmathtools.algorithms.BenjaminAlgorithm;
-import pl.t32.newmathtools.algorithms.BenjaminAlgorithmResults;
+import pl.t32.newmathtools.algorithms.BenjaminAlgorithmResult;
+import pl.t32.newmathtools.algorithms.exceptions.DateOutOfRangeException;
+import pl.t32.newmathtools.algorithms.exceptions.InvalidDateException;
 
 public class CalendarPresenter implements CalendarContract.Presenter {
 
@@ -18,43 +20,47 @@ public class CalendarPresenter implements CalendarContract.Presenter {
 
     @Override
     public void computeWeekDay(String day, String month, String year, boolean showAlgorithmSteps) {
+        int d, m, y;
+
         try {
-            int d = Integer.parseInt(day);
-            int m = Integer.parseInt(month);
-            int y = Integer.parseInt(year);
-            computeWeekDay(d, m, y);
-        } catch (NumberFormatException | NullPointerException e) {
+            d = Integer.parseInt(day);
+            m = Integer.parseInt(month);
+            y = Integer.parseInt(year);
+        }
+        catch (NumberFormatException | NullPointerException e) {
             calendarView.showImproperValuesPassedError();
+            return;
         }
-    }
 
-    private void computeWeekDay(int day, int month, int year) {
-        BenjaminAlgorithm ba = new BenjaminAlgorithm(day, month, year);
-        BenjaminAlgorithmResults results = null;
-
+        String dateString = String.format("%d-%02d-%02d", y, m, d);
+        SimpleDateFormat dateFormat = new SimpleDateFormat("yyy-MM-dd");
+        Date date;
         try {
-            results = ba.calculateSteps();
-        } catch (BenjaminAlgorithm.InvalidDateException e) {
-            calendarView.showNonExistingDateError();
-        } catch (BenjaminAlgorithm.DateOutOfRangeException e) {
-            calendarView.showDateOutOfRangeError();
+            date = dateFormat.parse(dateString);
+            SimpleDateFormat formatter = new SimpleDateFormat("EEEE, d MMMM yyyy");
+            String formattedDate = formatter.format(date);
+            calendarView.showDate(formattedDate);
+        }
+        catch (ParseException e) {
+            calendarView.showImproperValuesPassedError();
+            return;
         }
 
-        if (results != null) {
-            /*int dayOfWeek = results.getSumOfAll() % 7;
-            calendarView.showComputationResult("" + dayOfWeek);*/
-
+        if (showAlgorithmSteps) {
+            BenjaminAlgorithm ba = new BenjaminAlgorithm(d, m, y);
             try {
-                SimpleDateFormat inFormat = new SimpleDateFormat("dd-MM-yyyy");
-                Date date = inFormat.parse(day + "-" + month + "-" + year);
-                SimpleDateFormat outFormat = new SimpleDateFormat("EEEE");
-                String goal = outFormat.format(date);
-                calendarView.showComputationResult(MyUtils.capitalize(goal));
+                BenjaminAlgorithmResult results = ba.calculateSteps();
+                SimpleDateFormat formatter = new SimpleDateFormat("EEEE");
+                String monthName = formatter.format(date);
+                results.setMonthName(monthName);
+                calendarView.showAlgorithmSteps(results);
             }
-            catch (ParseException e) {
-                e.printStackTrace();
+            catch (InvalidDateException e) {
+                calendarView.showNonExistingDateError();
             }
-
+            catch (DateOutOfRangeException e) {
+                calendarView.showDateOutOfRangeError();
+            }
         }
     }
 }

@@ -42,6 +42,7 @@ public class ArithmeticProgressionFragment extends Fragment
     }
 
     @OnClick(R.id.ap_switch) void handleCheckedChange() {
+        apSwitch.setText(apSwitch.isChecked() ? R.string.compute_product : R.string.compute_sum);
         handleClick();
     }
 

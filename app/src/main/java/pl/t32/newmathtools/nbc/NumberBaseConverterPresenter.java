@@ -2,8 +2,8 @@ package pl.t32.newmathtools.nbc;
 
 
 import pl.t32.newmathtools.algorithms.NumberBaseConverter;
-import pl.t32.newmathtools.algorithms.exceptions.NumberBaseConverterBaseException;
-import pl.t32.newmathtools.algorithms.exceptions.NumberBaseConverterNumberException;
+import pl.t32.newmathtools.algorithms.exceptions.BaseRangeException;
+import pl.t32.newmathtools.algorithms.exceptions.NumberNotInBaseException;
 
 public class NumberBaseConverterPresenter implements NumberBaseConverterContract.Presenter {
 
@@ -20,10 +20,10 @@ public class NumberBaseConverterPresenter implements NumberBaseConverterContract
             String result = nbc.convertToBase(Integer.parseInt(newBase));
             view.showComputationResult(result);
         }
-        catch (NumberFormatException | NumberBaseConverterBaseException e) {
+        catch (NumberFormatException | BaseRangeException e) {
             view.showBaseOutOfRangeError();
         }
-        catch (NumberBaseConverterNumberException e) {
+        catch (NumberNotInBaseException e) {
             view.showNumberNotInGivenBaseError();
         }
     }

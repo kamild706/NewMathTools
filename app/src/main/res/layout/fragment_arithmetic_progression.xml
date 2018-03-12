@@ -42,8 +42,7 @@
 
     <Switch
         android:id="@+id/ap_switch"
-        android:textOn="@string/compute_product"
-        android:textOff="@string/compute_sum"
+        android:text="@string/compute_sum"
         style="@style/SwitchStyle"/>
 
     <Button

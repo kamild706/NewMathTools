@@ -43,4 +43,14 @@
     <string name="new_base">New base</string>
     <string name="error_message_base_range">Base must be in range 2 – 36</string>
     <string name="error_message_number_wrong_base">The number is not written in given base</string>
+
+    <string-array name="benjamin_algorithm_steps">
+        <item>1. %d \u2261 %d (mod 7)\n</item>
+        <item>2. %s offset: %d\n</item>
+        <item>3. %d ≡ %d (mod 7)\n</item>
+        <item>4. ⌊%d/4⌋ = %d\n</item>
+        <item>5. Century\'s offset: %d\n</item>
+        <item>6. %d+%d+%d+%d+%d=%d\n</item>
+        <item>7. %d ≡ %d (mod 7)\n</item>
+    </string-array>
 </resources>

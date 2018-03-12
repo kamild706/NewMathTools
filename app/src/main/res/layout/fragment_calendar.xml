@@ -11,9 +11,9 @@
 
         <android.support.design.widget.TextInputEditText
             android:id="@+id/day"
+            style="@style/InputEditTextStyle"
             android:hint="@string/day"
-            android:maxLength="2"
-            style="@style/InputEditTextStyle"/>
+            android:maxLength="2"/>
 
     </android.support.design.widget.TextInputLayout>
 
@@ -24,9 +24,9 @@
 
         <android.support.design.widget.TextInputEditText
             android:id="@+id/month"
+            style="@style/InputEditTextStyle"
             android:hint="@string/month"
-            android:maxLength="2"
-            style="@style/InputEditTextStyle"/>
+            android:maxLength="2"/>
 
     </android.support.design.widget.TextInputLayout>
 
@@ -37,29 +37,39 @@
 
         <android.support.design.widget.TextInputEditText
             android:id="@+id/year"
+            style="@style/InputEditTextStyle"
             android:hint="@string/year"
-            android:maxLength="4"
-            style="@style/InputEditTextStyle"/>
+            android:maxLength="4"/>
 
     </android.support.design.widget.TextInputLayout>
 
     <Switch
         android:id="@+id/calendar_switch"
-        android:text="@string/show_steps"
-        style="@style/SwitchStyle"/>
+        style="@style/SwitchStyle"
+        android:text="@string/show_steps"/>
 
     <Button
         android:id="@+id/button"
-        android:text="@string/compute"
-        style="@style/ButtonStyle"/>
+        style="@style/ButtonStyle"
+        android:text="@string/compute"/>
 
     <ScrollView
         android:id="@+id/scrollView"
         style="@style/ScrollViewStyle">
 
-        <TextView
-            android:id="@+id/textView"
-            style="@style/TextViewStyle"/>
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                      android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"
+                      android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/stepsView"
+                style="@style/TextViewStyle"/>
+
+            <TextView
+                android:id="@+id/dateView"
+                style="@style/TextViewStyle"/>
+        </LinearLayout>
     </ScrollView>
 
 </LinearLayout>

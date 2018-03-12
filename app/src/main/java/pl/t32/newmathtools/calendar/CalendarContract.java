@@ -1,9 +1,13 @@
 package pl.t32.newmathtools.calendar;
 
+
+import pl.t32.newmathtools.algorithms.BenjaminAlgorithmResult;
+
 public interface CalendarContract {
 
     interface View {
-        void showComputationResult(String result);
+        void showDate(String text);
+        void showAlgorithmSteps(BenjaminAlgorithmResult result);
         void showNonExistingDateError();
         void showDateOutOfRangeError();
         void showImproperValuesPassedError();
