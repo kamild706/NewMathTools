@@ -41,7 +41,7 @@
     </android.support.design.widget.TextInputLayout>
 
     <Switch
-        android:id="@+id/ap_switch"
+        android:id="@+id/sumOrProductSwitch"
         android:text="@string/compute_sum"
         style="@style/SwitchStyle"/>
 
