@@ -44,7 +44,7 @@
     </android.support.design.widget.TextInputLayout>
 
     <Switch
-        android:id="@+id/calendar_switch"
+        android:id="@+id/calendarSwitch"
         style="@style/SwitchStyle"
         android:text="@string/show_steps"/>
 

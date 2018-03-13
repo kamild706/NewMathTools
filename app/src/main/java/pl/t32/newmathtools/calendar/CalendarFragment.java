@@ -11,12 +11,15 @@ import android.widget.EditText;
 import android.widget.Switch;
 import android.widget.TextView;
 
+import butterknife.BindArray;
+import butterknife.BindString;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
-import pl.t32.newmathtools.MyUtils;
 import pl.t32.newmathtools.R;
 import pl.t32.newmathtools.algorithms.BenjaminAlgorithmResult;
+
+import static pl.t32.newmathtools.MyUtils.getValue;
 
 
 public class CalendarFragment extends Fragment implements CalendarContract.View {
@@ -27,20 +30,25 @@ public class CalendarFragment extends Fragment implements CalendarContract.View 
     @BindView(R.id.month) EditText month;
     @BindView(R.id.year) EditText year;
 
-    @BindView(R.id.calendar_switch) Switch explanationSwitch;
+    @BindView(R.id.calendarSwitch) Switch verboseOutput;
     @BindView(R.id.dateView) TextView dateView;
     @BindView(R.id.stepsView) TextView stepsView;
 
-    @OnClick(R.id.button) void handleClick() {
-        calendarPresenter.computeWeekDay(MyUtils.getValue(day), MyUtils.getValue(month),
-                MyUtils.getValue(year), explanationSwitch.isChecked());
+    @BindArray(R.array.benjamin_algorithm_steps) String[] steps;
+    @BindString(R.string.error_message_date_does_not_exist) String messageDateNotExist;
+    @BindString(R.string.error_message_year_out_of_range) String messageYearOutOfRange;
+    @BindString(R.string.error_message_numbers_only) String messageNumbersOnly;
+
+    @OnClick(R.id.button) void onButtonClicked() {
+        calendarPresenter.computeWeekDay(getValue(day), getValue(month), getValue(year),
+                verboseOutput.isChecked());
     }
 
-    @OnClick(R.id.calendar_switch) void handleCheckedChange() {
-        if (!explanationSwitch.isChecked())
+    @OnClick(R.id.calendarSwitch) void onSwitchCheckedChange() {
+        if (!verboseOutput.isChecked())
             stepsView.setText("");
 
-        handleClick();
+        onButtonClicked();
     }
 
     @Override
@@ -60,7 +68,6 @@ public class CalendarFragment extends Fragment implements CalendarContract.View 
 
     @Override
     public void showAlgorithmSteps(BenjaminAlgorithmResult result) {
-        String[] steps = getResources().getStringArray(R.array.benjamin_algorithm_steps);
         String message = String.format(steps[0], result.getDay(), result.getDayMod7()) +
                 String.format(steps[1], result.getMonthName(), result.getMonthOffset()) +
                 String.format(steps[2], result.getYearMod100(), result.getYearMod7()) +
@@ -75,16 +82,16 @@ public class CalendarFragment extends Fragment implements CalendarContract.View 
 
     @Override
     public void showNonExistingDateError() {
-        Snackbar.make(dateView, R.string.error_message_date_does_not_exist, Snackbar.LENGTH_LONG).show();
+        Snackbar.make(dateView, messageDateNotExist, Snackbar.LENGTH_LONG).show();
     }
 
     @Override
     public void showDateOutOfRangeError() {
-        Snackbar.make(dateView, R.string.error_message_year_out_of_range, Snackbar.LENGTH_LONG).show();
+        Snackbar.make(dateView, messageYearOutOfRange, Snackbar.LENGTH_LONG).show();
     }
 
     @Override
     public void showImproperValuesPassedError() {
-        Snackbar.make(dateView, R.string.error_message_numbers_only, Snackbar.LENGTH_LONG).show();
+        Snackbar.make(dateView, messageNumbersOnly, Snackbar.LENGTH_LONG).show();
     }
 }
