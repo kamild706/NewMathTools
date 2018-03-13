@@ -10,6 +10,7 @@ import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import butterknife.BindString;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
@@ -27,6 +28,8 @@ public class NumberBaseConverterFragment extends Fragment
     @BindView(R.id.nbc_new_base) EditText newBase;
 
     @BindView(R.id.textView) TextView textView;
+    @BindString(R.string.error_message_number_wrong_base) String messageNumberWrongBase;
+    @BindString(R.string.error_message_base_range) String messageBaseRange;
 
     @OnClick(R.id.button) void handleClick() {
         presenter.convertToBase(getValue(number), getValue(base), getValue(newBase));
@@ -49,11 +52,11 @@ public class NumberBaseConverterFragment extends Fragment
     @Override
     public void showNumberNotInGivenBaseError() {
         Snackbar.make(
-                textView, R.string.error_message_number_wrong_base, Snackbar.LENGTH_LONG).show();
+                textView, messageNumberWrongBase, Snackbar.LENGTH_LONG).show();
     }
 
     @Override
     public void showBaseOutOfRangeError() {
-        Snackbar.make(textView, R.string.error_message_base_range, Snackbar.LENGTH_LONG).show();
+        Snackbar.make(textView, messageBaseRange, Snackbar.LENGTH_LONG).show();
     }
 }
