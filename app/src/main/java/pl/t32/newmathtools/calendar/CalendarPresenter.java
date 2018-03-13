@@ -34,10 +34,10 @@ public class CalendarPresenter implements CalendarContract.Presenter {
 
         String dateString = String.format("%d-%02d-%02d", y, m, d);
         SimpleDateFormat dateFormat = new SimpleDateFormat("yyy-MM-dd");
+        SimpleDateFormat formatter = new SimpleDateFormat("EEEE, d MMMM yyyy");
         Date date;
         try {
             date = dateFormat.parse(dateString);
-            SimpleDateFormat formatter = new SimpleDateFormat("EEEE, d MMMM yyyy");
             String formattedDate = formatter.format(date);
             calendarView.showDate(formattedDate);
         }
@@ -50,7 +50,7 @@ public class CalendarPresenter implements CalendarContract.Presenter {
             BenjaminAlgorithm ba = new BenjaminAlgorithm(d, m, y);
             try {
                 BenjaminAlgorithmResult results = ba.calculateSteps();
-                SimpleDateFormat formatter = new SimpleDateFormat("EEEE");
+                formatter = new SimpleDateFormat("LLLL");
                 String monthName = formatter.format(date);
                 results.setMonthName(monthName);
                 calendarView.showAlgorithmSteps(results);

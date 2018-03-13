@@ -11,6 +11,7 @@ import android.widget.EditText;
 import android.widget.Switch;
 import android.widget.TextView;
 
+import butterknife.BindString;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
@@ -28,11 +29,12 @@ public class ArithmeticProgressionFragment extends Fragment
     @BindView(R.id.ap_common_diff) EditText commonDiff;
     @BindView(R.id.ap_terms_number) EditText termsNumber;
 
-    @BindView(R.id.ap_switch) Switch apSwitch;
+    @BindView(R.id.sumOrProductSwitch) Switch sumOrProduct;
     @BindView(R.id.textView) TextView textView;
+    @BindString(R.string.error_message_numbers_only) String messageNumbersOnly;
 
-    @OnClick(R.id.button) void handleClick() {
-        if (apSwitch.isChecked()) {
+    @OnClick(R.id.button) void onButtonClick() {
+        if (sumOrProduct.isChecked()) {
             presenter.computeProduct(
                     getValue(initialTerm), getValue(commonDiff), getValue(termsNumber));
         } else {
@@ -41,9 +43,9 @@ public class ArithmeticProgressionFragment extends Fragment
         }
     }
 
-    @OnClick(R.id.ap_switch) void handleCheckedChange() {
-        apSwitch.setText(apSwitch.isChecked() ? R.string.compute_product : R.string.compute_sum);
-        handleClick();
+    @OnClick(R.id.sumOrProductSwitch) void onSwitchCheckedChange() {
+        sumOrProduct.setText(sumOrProduct.isChecked() ? R.string.compute_product : R.string.compute_sum);
+        onButtonClick();
     }
 
     @Override
@@ -58,8 +60,7 @@ public class ArithmeticProgressionFragment extends Fragment
 
     @Override
     public void showImproperValuesPassedError() {
-        Snackbar.make(textView,
-                R.string.error_message_numbers_only,Snackbar.LENGTH_LONG).show();
+        Snackbar.make(textView, messageNumbersOnly, Snackbar.LENGTH_LONG).show();
     }
 
     @Override
